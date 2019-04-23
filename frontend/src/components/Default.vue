@@ -34,8 +34,6 @@ export default{
         console.log(response);
       });
   }
-  //Write post for neuron and do backend for it !
-  // Including tests
 }
 </script>
 <style media="screen" scoped>
