@@ -28,10 +28,6 @@ class HTTP_Methods():
         else:
             return True
 
-    def parse_post_msg(self, request):
-        return True
-
-
 class DB_Methods():
     def __init__(self, name):
         self.name = name
