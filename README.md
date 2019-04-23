@@ -17,6 +17,7 @@ Project created in order to learn web development with Flask and Vue.js.
 * flask-migrate
 * unittest
 * flask-testing
+* sqlalchemy
 * vue.js 
 * vue-resource 
 * vue-router 
