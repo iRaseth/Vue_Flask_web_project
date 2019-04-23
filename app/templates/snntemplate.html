@@ -1,0 +1,174 @@
+<h5>Train single neuron</h5>
+  <p>The input must be 0 or 1</p >
+  <form action="/set_single_neuron" method="post">
+    <select name="x11">
+      <option value="0">0</option>
+      <option value="1">1</option>
+    </select>
+    <select name="x12">
+      <option value="0">0</option>
+      <option value="1">1</option>
+    </select>
+    <select name="x13">
+      <option value="0">0</option>
+      <option value="1">1</option>
+    </select>
+    <select name="x14">
+      <option value="0">0</option>
+      <option value="1">1</option>
+    </select>
+    <br>
+    <select name="x21">
+      <option value="0">0</option>
+      <option value="1">1</option>
+    </select>
+    <select name="x22">
+      <option value="0">0</option>
+      <option value="1">1</option>
+    </select>
+    <select name="x23">
+      <option value="0">0</option>
+      <option value="1">1</option>
+    </select>
+    <select name="x24">
+      <option value="0">0</option>
+      <option value="1">1</option>
+    </select>
+    <br>
+    <select name="x31">
+      <option value="0">0</option>
+      <option value="1">1</option>
+    </select>
+    <select name="x32">
+      <option value="0">0</option>
+      <option value="1">1</option>
+    </select>
+    <select name="x33">
+      <option value="0">0</option>
+      <option value="1">1</option>
+    </select>
+    <select name="x34">
+      <option value="0">0</option>
+      <option value="1">1</option>
+    </select>
+    <br>
+    <select name="x41">
+      <option value="0">0</option>
+      <option value="1">1</option>
+    </select>
+    <select name="x42">
+      <option value="0">0</option>
+      <option value="1">1</option>
+    </select>
+    <select name="x43">
+      <option value="0">0</option>
+      <option value="1">1</option>
+    </select>
+    <select name="x44">
+      <option value="0">0</option>
+      <option value="1">1</option>
+    </select>
+    <br>
+    <label for='learning-param'>Learning parameter: </label>
+    <select name="learning_parameter">
+      <option value="0.1">0.1</option>
+      <option value="0.2">0.2</option>
+      <option value="0.3">0.3</option>
+      <option value="0.4">0.4</option>
+      <option value="0.5">0.5</option>
+      <option value="0.6">0.6</option>
+      <option value="0.7">0.7</option>
+      <option value="0.8">0.8</option>
+      <option value="0.9">0.9</option>
+    </select>
+    <label for='iterations'>Number of neuron iterations: </label>
+    <select name="iterations">
+      <option value="5">5</option>
+      <option value="15">15</option>
+      <option value="25">25</option>
+      <option value="50">50</option>
+      <option value="75">75</option>
+      <option value="100">100</option>
+    </select>
+    <p>Set the desired output that neuron has to learn.</p>
+    <label for="y1">y1</label>
+    <select name="y1">
+      <option value="0">0</option>
+      <option value="1">1</option>
+    </select>
+    <br>
+    <label for="y2">y2</label>
+    <select name="y2">
+      <option value="0">0</option>
+      <option value="1">1</option>
+    </select>
+    <br>
+    <label for="y3">y3</label>
+    <select name="y3">
+      <option value="0">0</option>
+      <option value="1">1</option>
+    </select>
+    <br>
+    <label for="y4">y4</label>
+    <select name="y4">
+      <option value="0">0</option>
+      <option value="1">1</option>
+    </select>
+    <br>
+    <input name="submit" type="submit" value="submit"></input>
+  </form>
+</div>
+</div>
+<!--
+class Neuron():
+    def __init__(self, output, learning_parameter):
+        np.random.seed(1)
+        self.weights =  2 * np.random.random((4,1)) - 1
+        self.learning_parameter = learning_parameter
+        self.d_output = output
+
+    def set_crude_input(self, crude_input):
+        #bias is the first column
+        self.input = crude_input
+
+    def threshold(self, x):
+        with np.nditer(x, op_flags=['readwrite']) as it:
+            for element in it:
+                if element >= 0 :
+                    element[...] = 1
+                else :
+                    element[...] = 0
+
+    def process(self):
+        self.sigma = np.dot(self.input, self.weights)
+        self.threshold(self.sigma)
+        if np.array_equal(self.sigma,self.d_output):
+            pass
+        else:
+            self.subtract = np.subtract(self.d_output, self.sigma)
+            self.learning_times_subtract = np.dot(self.learning_parameter, self.subtract)
+            self.learning_sub_input = np.dot(self.input, self.learning_times_subtract)
+            self.weights = self.weights + self.learning_sub_input
+################
+################
+################
+def get_input_matrix(self, request):
+    input_matrix = np.empty((0,4), int)
+    for x in range(1,5):
+        x_row = np.array([])
+        for y in range(1,5):
+            x_input = int(request.form.get('x'+str(x)+str(y)))
+            tmp_array = np.array([x_input])
+            x_row = np.concatenate((x_row, tmp_array))
+            if x_row.size == 4:
+                input_matrix = np.vstack([input_matrix, x_row])
+    return input_matrix
+
+def get_desired_output_matrix(self, request):
+    y1 = int(request.form.get('y1'))
+    y2 = int(request.form.get('y2'))
+    y3 = int(request.form.get('y3'))
+    y4 = int(request.form.get('y4'))
+    return [y1,y2,y3,y4]
+
+-->
